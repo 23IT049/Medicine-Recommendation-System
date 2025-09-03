@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Prediction System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">🏥 Medicine Prediction System</h1>
+            <p class="subtitle">Select your symptoms to get health recommendations</p>
+            <div class="disclaimer">
+                <p><strong>⚠️ Medical Disclaimer:</strong> This tool is for informational purposes only and should not replace professional medical advice. Always consult with a healthcare provider for proper diagnosis and treatment.</p>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="input-section">
+                <div class="symptoms-container">
+                    <h2 class="section-title">Select Your Symptoms</h2>
+                    <div class="search-bar">
+                        <input type="text" id="symptom-search" placeholder="Search symptoms..." class="search-input">
+                        <button class="clear-search" onclick="clearSearch()">&times;</button>
+                    </div>
+                    
+                    <div class="selected-symptoms">
+                        <h3>Selected Symptoms:</h3>
+                        <div id="selected-symptoms-list" class="symptoms-list"></div>
+                    </div>
+
+                    <div class="available-symptoms">
+                        <h3>Available Symptoms:</h3>
+                        <div id="symptoms-grid" class="symptoms-grid"></div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="predictDisease()" class="predict-btn" id="predict-btn" disabled>
+                            🔍 Predict Disease
+                        </button>
+                        <button onclick="clearSelection()" class="clear-btn">
+                            🗑️ Clear All
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section" style="display: none;">
+                <div class="results-container">
+                    <h2 class="section-title">🎯 Prediction Results</h2>
+                    
+                    <div class="result-card disease-card">
+                        <div class="card-header">
+                            <h3>📋 Predicted Disease</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4 id="predicted-disease" class="disease-name"></h4>
+                            <p id="disease-description" class="disease-description"></p>
+                        </div>
+                    </div>
+
+                    <div class="recommendations-grid">
+                        <div class="result-card">
+                            <div class="card-header">
+                                <h3>🛡️ Precautions</h3>
+                            </div>
+                            <div class="card-content">
+                                <ul id="precautions-list"></ul>
+                            </div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="card-header">
+                                <h3>💊 Medications</h3>
+                            </div>
+                            <div class="card-content">
+                                <ul id="medications-list"></ul>
+                            </div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="card-header">
+                                <h3>🍎 Diet Recommendations</h3>
+                            </div>
+                            <div class="card-content">
+                                <ul id="diet-list"></ul>
+                            </div>
+                        </div>
+
+                        <div class="result-card">
+                            <div class="card-header">
+                                <h3>🏃‍♂️ Workout Suggestions</h3>
+                            </div>
+                            <div class="card-content">
+                                <ul id="workout-list"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button onclick="newPrediction()" class="new-prediction-btn">
+                            🔄 New Prediction
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Medicine Prediction System. Built for educational purposes.</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
